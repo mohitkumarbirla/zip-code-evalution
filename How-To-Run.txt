@@ -1,0 +1,12 @@
+Install Gradle from (https://gradle.org/install/)
+After successful installation, put bin folder path 
+into environment variable and run following commands:
+
+1) 'gradle clean'
+To clean an existig build project
+
+2) 'gradle build'
+To compile all the classes
+
+3) 'gradle run'
+To execute the main zip code program
