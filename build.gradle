@@ -1,0 +1,19 @@
+apply plugin: 'java'
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'ZIP Code Evaluation',
+                   'Implementation-Version': version
+    }
+}
+ repositories {
+    mavenCentral()
+}
+ task run (type: JavaExec, dependsOn: classes) {
+    if (project.hasProperty('exclude')) {
+        args(exclude.split(','))
+    }
+    description = 'ZIP code range consolidation and exclusion testing'
+    main = 'com.mk.main.ZipFiveDigitEval'
+    classpath = sourceSets.main.runtimeClasspath
+}
